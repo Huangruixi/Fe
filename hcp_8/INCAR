@@ -1,0 +1,43 @@
+SYSTEM = 1024fe
+
+! ab initio
+ISMEAR = 0      ! Gaussian smearing
+SIGMA = 0.1
+ENCUT  = 400
+EDIFF  = 1e-6
+
+LREAL  = Auto     ! projection operators in real space
+
+ALGO   = Normal
+PREC   = Normal      ! precision
+ISYM   = 0        ! no symmetry imposed
+NELM   = 200
+
+! MD
+IBRION = 0        ! MD (treat ionic dgr of freedom)
+NSW    = 20000       ! no of ionic steps
+POTIM  = 1      ! MD time step in fs
+
+NBANDS = 6912
+NCORE = 16
+
+MDALGO = 3                ! Langevin thermostat
+LANGEVIN_GAMMA = 10
+LANGEVIN_GAMMA_L = 1
+PMASS = 100
+
+TEBEG  = 7000              ! temperature
+PSTRESS = 3600           ! pressure
+
+# LDA+U
+LDAU=.TURE.
+LDAUTYPE=2
+LDAUL=2 
+LDAUU=3.0
+LDAUJ=0.0 
+
+ISIF   = 3        ! update positions, cell shape and volume
+
+#Machine learning parameters
+ML_LMLFF = .TRUE.
+ML_ISTART = 2
